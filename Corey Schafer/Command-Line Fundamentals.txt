@@ -1,0 +1,148 @@
+- git --version :
+        check if git is installed
+
+FIRST TIME GIT SETUP:
+
+git config - Git comes with a tool called git config that lets you get and set configuration variables that control all aspects of how Git looks and operates.
+
+Set up global configuration variables: So that the other developers know who is checking the code in and out and making the changes.
+
+You need to do this only once if you pass the --global option, because then Git will always use that information for anything you do on that system. If you want to override this with a different name or email address for specific projects, you can run the command without the --global option when you’re in that project.
+
+    - git config --global user.name "Kunal Kushwaha"
+    - git config --global user.email "kunalkushwaha453@gmail.com"
+    - git config --list
+            : To check the values
+Stored in : ~/.gitconfig or ~/.config/git/config file
+
+These variables can be stored in three different places:
+
+1) (Above method) ~/.gitconfig or ~/.config/git/config file: Values specific personally to you, the user. You can make Git read and write to this file specifically by passing the --global option, and this affects all of the repositories you work with on your system.
+
+2) /etc/gitconfig file: Contains values applied to every user on the system and all their repositories. If you pass the option --system to git config, it reads and writes from this file specifically. (Because this is a system configuration file, you would need administrative or superuser privilege to make changes to it.)
+
+3) config file in the Git directory (that is, .git/config) of whatever repository you’re currently using: Specific to that single repository. You can force Git to read from and write to this file with the --local option, but that is in fact the default. (Unsurprisingly, you need to be located somewhere in a Git repository for this option to work properly)
+
+
+- git help config OR git config --help :
+        To see info about a verb (ex: config)
+
+
+Getting started:
+
+Two common scenarios:
+- You have an existing project on your local machine that you want to start tracking using git.
+- Whenever there is an existing project remotely that you wanna start developing one. (Github)
+
+1st Scenario:
+Suppose the code we want to track is in the 'Data Structures, Data Types' directory.
+cd to 'Data Structures, Data Types'
+
+- ls -la :
+        we see there ar many .py files here that we can track
+
+- git init:
+        Shows: 'Initialized empty Git repository in /Users/SicParvisMagna/OneDrive/Documents/Python programs/PyCharm/Tutorials/Data Structures, Data Types/.git/'
+
+- ls - la :
+        we see there is a .git file. This .git is actually a DIRECTORY (REPOSITORY), it contains everything that is related to our repository.
+
+- rm -rf .git :
+        If we want to stop tracking our project we can delete .git file
+
+- git status :
+        Show the working tree status
+
+- touch .gitignore:
+        If you don't want some files in the repository which are say not part of the code and are personal files:
+        Ex: if we have a .project file in your repository, you can ignore it by using a .gitignore file:
+
+.gitignore file is a simple text file in which we can add the files we want to ignore.
+- sublime .gitignore
+- .DS_store
+- .project
+- *.pyc # Ignore all files with a .pyc extension
+
+- git status:
+        Now here we will not see .project file. It will show .gitignore file and we want to commit that because we want to ignore all the files listed in it.
+
+Staging area:
+
+Add files to staging area:
+
+- git add -A :
+        To add all untracked files
+
+- git add .gitignore :
+        To add files individually
+
+Remove files from staging area:
+
+- git reset :
+        To remove all fil
+- git reset Set\ Methods.py :
+        To remove files individually
+
+Making Commits:
+
+- git commit -m "Initial Commit"  :
+        # -m means we are putting a message.
+
+- git status :
+        Will show something like working directory/tree is clean. That's because we have committed those files and now we don't have any modified or untracked files and we haven't modified them since we committed them.
+
+- git log  :
+        To see git commits # Will show our message too
+
+- git add -A :
+        To add modified files
+- git commit -m "Second commit"
+
+- git log:
+        shows two versions of git commits
+
+
+2nd Scenario: Tracking remote projects (Github):
+
+- git clone <url> <where to clone> :
+        Cloning a remote repository
+
+# here url is given the name of “origin”
+
+Note: <where to clone> should be empty!
+
+Example:
+- git clone https://github.com/coding-blocks-archives/Crux-Noida-2018-Aug-Evening .
+        . means cwd
+
+- git remote -v
+- git branch -a
+        : Viewing information about the remote repository:
+
+
+Making changes to codebase and commit those files and how to push them to the remote repository:
+
+Ex: Made a change in Strings.py file
+
+1. Commit changes like we did previously:
+
+- git diff :
+        Show changes between commits, commit and working tree, etc
+
+- git status
+
+- git add -A
+        # Adding to staging directory
+
+- git commit -m "Modified Strings.py file"
+
+2. Push changes to the remote repository:
+- git pull origin master :
+        If many people are working on the remote repository, this command will pull any changes made since the last time we pulled from the repository
+
+- git push origin master
+
+# master refers to the branch
+
+
+

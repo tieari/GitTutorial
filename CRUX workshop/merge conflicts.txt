@@ -1,0 +1,79 @@
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git log --oneline
+d37f915 (HEAD -> master, feature) a.cpp modified
+7adec83 Initial Commit
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git checkout feature
+Switched to branch 'feature'
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ ls
+Main.class	a.cpp		b.cpp		main.java
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ vi main.java 
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git add main.java 
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git commit -m "123 added"
+[feature 531f08e] 123 added
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git log --oneline
+531f08e (HEAD -> feature) 123 added
+d37f915 (master) a.cpp modified
+7adec83 Initial Commit
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git checkout master
+Switched to branch 'master'
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ vi main.java 
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git add main.java 
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git commit -m "456 added"
+[master b95a014] 456 added
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git log --oneline
+b95a014 (HEAD -> master) 456 added
+d37f915 a.cpp modified
+7adec83 Initial Commit
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ :q
+-bash: :q: command not found
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git merge feature
+Auto-merging main.java
+CONFLICT (content): Merge conflict in main.java
+Automatic merge failed; fix conflicts and then commit the result.
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ vi main.java 
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git add main.java 
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git commit -m "merged feature"
+[master f2df29f] merged feature
+
+SicParvisMagna at Kunals-MacBook in git_demo
+$ git log --oneline
+f2df29f (HEAD -> master) merged feature
+b95a014 456 added
+531f08e (feature) 123 added
+d37f915 a.cpp modified
+7adec83 Initial Commit
+
