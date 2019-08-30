@@ -1,0 +1,174 @@
+Last login: Sat Mar 23 13:25:32 on ttys002
+
+SicParvisMagna at Kunals-MacBook in ~
+$ drive 
+
+SicParvisMagna at Kunals-MacBook in Documents
+$ cd fabric8-maven-plugin/
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ ls
+CHANGELOG.md	enricher	license.txt	plugin		watcher
+README.md	generator	mvnw		pom.xml
+core		header.txt	mvnw.cmd	samples
+doc		it		parent		scripts
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git log
+commit f7e072f63ea3bd69f4d99bb434ffda1e2b663595 (HEAD -> Durations, origin/Temp, Temp)
+Author: Kunal Kushwaha <kunalkushwaha453@gmail.com>
+Date:   Sat Mar 23 09:41:26 2019 +0530
+
+    'abstract' qualifier removed from BaseEnricher
+
+commit 09c19b0f78f163d325a72bceb5e6e0cfa7afaeb4
+Author: Kunal Kushwaha <kunalkushwaha453@gmail.com>
+Date:   Sat Mar 23 09:33:40 2019 +0530
+
+    WatchEnricher file removed
+
+commit 54ec89b469b5eeaf679b5916713f5da0f23e891d (origin/master, origin/HEAD, master)
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Thu Mar 21 12:28:05 2019 +0530
+
+    Fixed openshift typo in doc
+
+commit 592f9ebaf9e133bc18416fd637564cca37817d44
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Tue Mar 19 19:00:55 2019 +0530
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git reset 09c19b0f78f163d325a72bceb5e6e0cfa7afaeb4
+Unstaged changes after reset:
+M	enricher/api/src/main/java/io/fabric8/maven/enricher/api/BaseEnricher.java
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git stash
+Saved working directory and index state WIP on Durations: 09c19b0f WatchEnricher file removed
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git push -f origin Tesp
+error: src refspec Tesp does not match any.
+error: failed to push some refs to 'https://github.com/kunal-kushwaha/fabric8-maven-plugin.git'
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git push -f origin Temp
+Everything up-to-date
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git log
+commit 09c19b0f78f163d325a72bceb5e6e0cfa7afaeb4 (HEAD -> Durations)
+Author: Kunal Kushwaha <kunalkushwaha453@gmail.com>
+Date:   Sat Mar 23 09:33:40 2019 +0530
+
+    WatchEnricher file removed
+
+commit 54ec89b469b5eeaf679b5916713f5da0f23e891d (origin/master, origin/HEAD, master)
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Thu Mar 21 12:28:05 2019 +0530
+
+    Fixed openshift typo in doc
+
+commit 592f9ebaf9e133bc18416fd637564cca37817d44
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Tue Mar 19 19:00:55 2019 +0530
+
+    Fix #1037: Do not add ImageChange change triggers for Docker images
+    
+    + Only add triggers to main application container
+    + Added ImageChangeTriggerEnricher for handling triggers in separate enricher
+
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git log
+commit 09c19b0f78f163d325a72bceb5e6e0cfa7afaeb4 (HEAD -> Durations)
+Author: Kunal Kushwaha <kunalkushwaha453@gmail.com>
+Date:   Sat Mar 23 09:33:40 2019 +0530
+
+    WatchEnricher file removed
+
+commit 54ec89b469b5eeaf679b5916713f5da0f23e891d (origin/master, origin/HEAD, master)
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Thu Mar 21 12:28:05 2019 +0530
+
+    Fixed openshift typo in doc
+
+commit 592f9ebaf9e133bc18416fd637564cca37817d44
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Tue Mar 19 19:00:55 2019 +0530
+
+    Fix #1037: Do not add ImageChange change triggers for Docker images
+    
+    + Only add triggers to main application container
+    + Added ImageChangeTriggerEnricher for handling triggers in separate enricher
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git branch
+* Durations
+  Temp
+  master
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git checkout Temp
+Switched to branch 'Temp'
+Your branch is up to date with 'origin/Temp'.
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git log
+commit f7e072f63ea3bd69f4d99bb434ffda1e2b663595 (HEAD -> Temp, origin/Temp)
+Author: Kunal Kushwaha <kunalkushwaha453@gmail.com>
+Date:   Sat Mar 23 09:41:26 2019 +0530
+
+    'abstract' qualifier removed from BaseEnricher
+
+commit 09c19b0f78f163d325a72bceb5e6e0cfa7afaeb4 (Durations)
+Author: Kunal Kushwaha <kunalkushwaha453@gmail.com>
+Date:   Sat Mar 23 09:33:40 2019 +0530
+
+    WatchEnricher file removed
+
+commit 54ec89b469b5eeaf679b5916713f5da0f23e891d (origin/master, origin/HEAD, master)
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Thu Mar 21 12:28:05 2019 +0530
+
+    Fixed openshift typo in doc
+
+commit 592f9ebaf9e133bc18416fd637564cca37817d44
+Author: Rohan Kumar <rohaan@redhat.com>
+Date:   Tue Mar 19 19:00:55 2019 +0530
+
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git reset 09c19b0f78
+Unstaged changes after reset:
+M	enricher/api/src/main/java/io/fabric8/maven/enricher/api/BaseEnricher.java
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git stash
+Saved working directory and index state WIP on Temp: 09c19b0f WatchEnricher file removed
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ git push -f origin Temp
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/kunal-kushwaha/fabric8-maven-plugin.git
+ + f7e072f6...09c19b0f Temp -> Temp (forced update)
+
+SicParvisMagna at Kunals-MacBook in fabric8-maven-plugin
+$ 
